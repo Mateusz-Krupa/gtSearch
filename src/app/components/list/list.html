@@ -1,0 +1,18 @@
+<section class="layout-padding">
+    <div ng-if="ctrl.repositoryList" claas="layout-padding">
+        <md-list><h3>{{ctrl.user.name}} repositories: </h3>
+            <p ng-show="ctrl.repositoryList.length == 0">No repositories</p>
+            <md-list-item class="md-3-line" ng-repeat="item in ctrl.repositoryList track by item.id">
+                <img ng-src="{{::ctrl.user.avatar_url}}" class="md-avatar" alt="{{::ctrl.user.name}}" />
+                <div class="md-list-item-text" layout="column">
+                    <a ng-href="{{::item.downloads_url}}">{{ ::item.name }}</a>
+                    <h4>{{ ::item.description}}</h4>
+                    <p>Stars: {{ ::item.stargazers_count }}</p>
+                </div>
+            </md-list-item>
+        </md-list>
+    </div>
+    <div ng-if="!ctrl.repositoryList">
+        <p class="error">{{ctrl.error}}</p>
+    </div>
+</section>

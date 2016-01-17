@@ -1,12 +1,12 @@
-<div layout="column" class="layout-padding" layout-fill ng-controller="MainController as ctrl">
+<div layout="column" class="layout-padding" layout-fill>
     <md-content>
-      <form ng-submit="ctrl.submitSearch()" class="layout-padding">
+      <form ng-submit="main.submitSearch()" class="layout-padding">
         <md-input-container class="md-icon-float md-block">
           <label>Search for user</label>
           <md-icon md-svg-src="assets/images/ic_person_24px.svg" class="name"></md-icon>
-          <input ng-model="ctrl.userName" type="text">
+          <input ng-model="main.userName" type="text">
         </md-input-container>
       </form>
-      <gt-list repository-list="ctrl.repositoryList" user="ctrl.user" error="ctrl.error"></gt-list>
+      <gt-list repository-list="main.repositoryList" user="main.user" error="main.error"></gt-list>
   </md-content>
 </div>

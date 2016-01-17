@@ -8,9 +8,9 @@ export function gtList(): angular.IDirective {
         controllerAs: 'ctrl',
         scope: {},
         bindToController: {
-            repositoryList: "=",
-            user: "=",
-            error: "="
+            repositoryList: '=',
+            user: '=',
+            error: '='
         }
     };
 

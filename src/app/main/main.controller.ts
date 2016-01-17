@@ -1,3 +1,4 @@
+import {UserProvider} from '../providers/user.provider';
 export class MainController {
 
   public repositoryList: any;
@@ -6,23 +7,23 @@ export class MainController {
   public user: string;
 
   /* @ngInject */
-  constructor (private UserProvider) {
+  constructor (private UserProvider: UserProvider) {
   }
 
-  public submitSearch(){
-    this.UserProvider.getUsersRepositories(this.userName).then((res) => {
+  public submitSearch(): void {
+    this.UserProvider.getUsersRepositories(this.userName).then((res: any) => {
       this.repositoryList = res.data;
-    }).catch((error) => {
+    }).catch((error: any) => {
       this.repositoryList = null;
       this.setMessageError(error);
     });
-    this.UserProvider.getUser(this.userName).then((res) =>{
-      this.user= res.data;
+    this.UserProvider.getUser(this.userName).then((res: any) => {
+      this.user = res.data;
     });
   }
 
-  public setMessageError(error){
-    if(typeof error.data !== 'undefined') {
+  public setMessageError(error: any): void {
+    if (typeof error.data !== 'undefined') {
       this.error = error.data.message;
     }
   }

@@ -6,7 +6,7 @@ export class MainController {
   public user: string;
 
   /* @ngInject */
-  constructor (private  $http: ng.IHttpService, private UserProvider) {
+  constructor (private UserProvider) {
   }
 
   public submitSearch(){
